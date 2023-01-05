@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Pagination } from "./Pagination";
+
 export const Card = ({ fetched, setFetching }) => {
   const [article, setArticle] = useState([]);
   const [totalResults, setTotalResults] = useState();
@@ -20,7 +21,7 @@ export const Card = ({ fetched, setFetching }) => {
 
   const data = useCallback(async () => {
     await fetch(
-      "https://newsapi.org/v2/everything?q=tesla&amp;from=2022-12-04&sortBy=publishedAt&apiKey=fb9497aaf184491688f2fd21deaa87a4"
+      "https://newsapi.org/v2/everything?q=tesla&amp;from=2022-12-04&sortBy=publishedAt&apiKey=YOUR_API_KEY_HERE"
     )
       .then((x) => {
         return x.json();
